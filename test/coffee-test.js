@@ -1,7 +1,8 @@
 var BORSCHIK = require('borschik'),
     FS = BORSCHIK.require('./fs'),
     PATH = require('path'),
-    ASSERT = require('assert');
+    ASSERT = require('assert'),
+    COFFEE_TECH = require('..')(BORSCHIK);
 
 /**
  * Mocha BDD interface.
@@ -26,7 +27,7 @@ function testJS(tech, dir, inPath, outPath, okPath) {
         return BORSCHIK.api({ tech: tech, input: inPath, output: outPath, minimize: true });
     });
 
-    it('UglifyJS, tech ' + tech + ' ok', function() {
+    it('UglifyJS, tech coffee ok', function() {
         ASSERT.equal(readFile(outPath).toString(), readFile(okPath).toString());
     });
 
@@ -36,5 +37,5 @@ function testJS(tech, dir, inPath, outPath, okPath) {
 }
 
 describe('UglifyJS yes, tech coffee', function() {
-    testJS(require('..'), 'uglifyjs_test', 'test.coffee', '_test.js', 'ok_jscoffee.js');
+    testJS(COFFEE_TECH, 'uglifyjs_test', 'test.coffee', '_test.js', 'ok_jscoffee.js');
 });

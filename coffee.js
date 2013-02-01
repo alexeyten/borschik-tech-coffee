@@ -1,22 +1,30 @@
 var PATH = require('path');
 var COFFEE = require('coffee-script');
 
-var base = require('borschik').getTech('js');
+exports = module.exports = function coffee(borschik) {
+    var base = borschik.getTech('js');
 
-exports.Tech = base.Tech._inherit({
+    if (exports.Tech) {
+        return exports;
+    }
 
-    File: exports.File = base.File._inherit({
+    exports.Tech = base.Tech._inherit({
 
-        parseInclude: function(content) {
+        File: exports.File = base.File._inherit({
 
-            if (Buffer.isBuffer(content)) content = content.toString('utf8');
+            parseInclude: function(content) {
 
-            return PATH.extname(this.path) === '.coffee'?
-                this.__base(COFFEE.compile(content, { filename: this.path })) :
-                this.__base.apply(this, arguments);
+                if (Buffer.isBuffer(content)) content = content.toString('utf8');
 
-        }
+                return PATH.extname(this.path) === '.coffee'?
+                    this.__base(COFFEE.compile(content, { filename: this.path })) :
+                    this.__base.apply(this, arguments);
 
-    })
+            }
 
-});
+        })
+
+    });
+
+    return exports;
+}
