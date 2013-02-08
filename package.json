@@ -1,15 +1,15 @@
 {
     "name": "borschik-tech-coffee",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "coffee script tech for borschik",
     "dependencies": {
         "coffee-script": "*"
     },
     "peerDependencies": {
-        "borschik": "> 0.2.4"
+        "borschik": "0.3.x"
     },
     "devDependencies": {
-        "borschik": "> 0.2.4",
+        "borschik": "0.3.x",
         "mocha-as-promised": "*",
         "mocha": "~1.7.0"
     },
