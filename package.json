@@ -1,14 +1,28 @@
 {
-    "name": "borschik-tech-coffee",
-    "version": "0.1.0",
-    "description": "coffee script tech for borschik",
-    "dependencies": {
-        "coffee-script": "*"
-    },
-    "devDependencies": {
-        "borschik": "0.3.x",
-        "mocha-as-promised": "*",
-        "mocha": "~1.12.0"
-    },
-    "main": "coffee.js"
+  "name": "borschik-tech-coffee",
+  "version": "0.1.0",
+  "description": "CoffeeScript tech for borschik",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alexeyten/borschik-tech-coffee.git"
+  },
+  "dependencies": {
+    "coffee-script": "*"
+  },
+  "peerDependencies": {
+    "borschik": "0.3.x"
+  },
+  "devDependencies": {
+    "borschik": "0.3.x",
+    "mocha-as-promised": "*",
+    "mocha": "~1.12.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "coffee.js",
+    "README.md"
+  ],
+  "main": "coffee.js"
 }
