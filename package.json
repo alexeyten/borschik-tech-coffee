@@ -10,12 +10,12 @@
     "coffee-script": "*"
   },
   "peerDependencies": {
-    "borschik": "0.3.x"
+    "borschik": "0.4.x"
   },
   "devDependencies": {
-    "borschik": "0.3.x",
-    "mocha-as-promised": "*",
-    "mocha": "~1.12.0"
+    "borschik": "0.4.x",
+    "mocha": "~1.12.0",
+    "mocha-as-promised": "*"
   },
   "scripts": {
     "test": "mocha"
